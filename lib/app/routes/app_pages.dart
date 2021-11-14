@@ -2,6 +2,10 @@ import 'package:get/get.dart';
 
 import 'package:flutter_firebase/app/modules/home/bindings/home_binding.dart';
 import 'package:flutter_firebase/app/modules/home/views/home_view.dart';
+import 'package:flutter_firebase/app/modules/login/bindings/login_binding.dart';
+import 'package:flutter_firebase/app/modules/login/views/login_view.dart';
+import 'package:flutter_firebase/app/modules/sign_up/bindings/sign_up_binding.dart';
+import 'package:flutter_firebase/app/modules/sign_up/views/sign_up_view.dart';
 
 part 'app_routes.dart';
 
@@ -15,6 +19,16 @@ class AppPages {
       name: _Paths.HOME,
       page: () => HomeView(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => LoginView(),
+      binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.SIGN_UP,
+      page: () => SignUpView(),
+      binding: SignUpBinding(),
     ),
   ];
 }
