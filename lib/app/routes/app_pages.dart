@@ -4,6 +4,8 @@ import 'package:flutter_firebase/app/modules/home/bindings/home_binding.dart';
 import 'package:flutter_firebase/app/modules/home/views/home_view.dart';
 import 'package:flutter_firebase/app/modules/login/bindings/login_binding.dart';
 import 'package:flutter_firebase/app/modules/login/views/login_view.dart';
+import 'package:flutter_firebase/app/modules/reset_password/bindings/reset_password_binding.dart';
+import 'package:flutter_firebase/app/modules/reset_password/views/reset_password_view.dart';
 import 'package:flutter_firebase/app/modules/sign_up/bindings/sign_up_binding.dart';
 import 'package:flutter_firebase/app/modules/sign_up/views/sign_up_view.dart';
 
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.SIGN_UP,
       page: () => SignUpView(),
       binding: SignUpBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESET_PASSWORD,
+      page: () => ResetPasswordView(),
+      binding: ResetPasswordBinding(),
     ),
   ];
 }

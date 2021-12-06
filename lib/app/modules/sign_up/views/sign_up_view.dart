@@ -34,6 +34,7 @@ class SignUpView extends GetView<SignUpController> {
                 decoration: InputDecoration(
                   labelText: "Password",
                 ),
+                obscureText: true,
               ),
               SizedBox(height: 32),
               ElevatedButton(

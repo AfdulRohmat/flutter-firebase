@@ -34,8 +34,22 @@ class LoginView extends GetView<LoginController> {
                 decoration: InputDecoration(
                   labelText: "Password",
                 ),
+                obscureText: true,
               ),
-              SizedBox(height: 32),
+              //
+              // Reset Password
+              Row(
+                children: [
+                  Text('Lupa password ?'),
+                  TextButton(
+                    onPressed: () {
+                      Get.toNamed(Routes.RESET_PASSWORD);
+                    },
+                    child: Text('Reset Password'),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
                   auth_controller.login(
@@ -44,7 +58,8 @@ class LoginView extends GetView<LoginController> {
                 },
                 child: Text('Login'),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 8),
+
               Row(
                 children: [
                   Text('Belum punya akun ?'),
@@ -55,7 +70,7 @@ class LoginView extends GetView<LoginController> {
                     child: Text('Buat Akun'),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ));
