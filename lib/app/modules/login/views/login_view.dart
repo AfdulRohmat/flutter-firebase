@@ -12,67 +12,68 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Login Screen'),
-          centerTitle: true,
+      appBar: AppBar(
+        title: Text('Login Screen'),
+        centerTitle: true,
+      ),
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 16),
+        child: ListView(
+          children: [
+            // field email
+            TextField(
+              controller: controller.email_signIn_textEditingController,
+              decoration: InputDecoration(
+                labelText: "Email",
+              ),
+            ),
+
+            // field Password
+            TextField(
+              controller: controller.password_signIn_textEditingController,
+              decoration: InputDecoration(
+                labelText: "Password",
+              ),
+              obscureText: true,
+            ),
+            //
+            // Reset Password
+            Row(
+              children: [
+                Text('Lupa password ?'),
+                TextButton(
+                  onPressed: () {
+                    Get.toNamed(Routes.RESET_PASSWORD);
+                  },
+                  child: Text('Reset Password'),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                auth_controller.login(
+                    controller.email_signIn_textEditingController.text,
+                    controller.password_signIn_textEditingController.text);
+              },
+              child: Text('Login'),
+            ),
+            SizedBox(height: 8),
+
+            Row(
+              children: [
+                Text('Belum punya akun ?'),
+                TextButton(
+                  onPressed: () {
+                    Get.toNamed(Routes.SIGN_UP);
+                  },
+                  child: Text('Buat Akun'),
+                ),
+              ],
+            ),
+          ],
         ),
-        body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 16),
-          child: ListView(
-            children: [
-              // field email
-              TextField(
-                controller: controller.email_signIn_textEditingController,
-                decoration: InputDecoration(
-                  labelText: "Email",
-                ),
-              ),
-
-              // field Password
-              TextField(
-                controller: controller.password_signIn_textEditingController,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                ),
-                obscureText: true,
-              ),
-              //
-              // Reset Password
-              Row(
-                children: [
-                  Text('Lupa password ?'),
-                  TextButton(
-                    onPressed: () {
-                      Get.toNamed(Routes.RESET_PASSWORD);
-                    },
-                    child: Text('Reset Password'),
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {
-                  auth_controller.login(
-                      controller.email_signIn_textEditingController.text,
-                      controller.password_signIn_textEditingController.text);
-                },
-                child: Text('Login'),
-              ),
-              SizedBox(height: 8),
-
-              Row(
-                children: [
-                  Text('Belum punya akun ?'),
-                  TextButton(
-                    onPressed: () {
-                      Get.toNamed(Routes.SIGN_UP);
-                    },
-                    child: Text('Buat Akun'),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }

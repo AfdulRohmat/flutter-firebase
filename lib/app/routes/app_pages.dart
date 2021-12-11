@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
 
+import 'package:flutter_firebase/app/modules/add-data/bindings/add_data_binding.dart';
+import 'package:flutter_firebase/app/modules/add-data/views/add_data_view.dart';
+import 'package:flutter_firebase/app/modules/edit-data/bindings/edit_data_binding.dart';
+import 'package:flutter_firebase/app/modules/edit-data/views/edit_data_view.dart';
 import 'package:flutter_firebase/app/modules/home/bindings/home_binding.dart';
 import 'package:flutter_firebase/app/modules/home/views/home_view.dart';
 import 'package:flutter_firebase/app/modules/login/bindings/login_binding.dart';
@@ -36,6 +40,16 @@ class AppPages {
       name: _Paths.RESET_PASSWORD,
       page: () => ResetPasswordView(),
       binding: ResetPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_DATA,
+      page: () => AddDataView(),
+      binding: AddDataBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_DATA,
+      page: () => EditDataView(),
+      binding: EditDataBinding(),
     ),
   ];
 }
